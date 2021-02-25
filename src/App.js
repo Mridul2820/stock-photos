@@ -47,6 +47,7 @@ const App = () => {
 
     useEffect(() => {
         fetchImages()
+        // eslint-disable-next-line
     }, [page])
 
     useEffect(() => {
@@ -59,6 +60,7 @@ const App = () => {
             }
         })
         return () => window.removeEventListener('scroll', event)
+        // eslint-disable-next-line
     }, [])
 
     return (
