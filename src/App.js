@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
-import { FaSearch } from 'react-icons/fa'
-import Photo from './components/Photo'
+import Search from './components/Search'
+import PhotoGrid from './components/PhotoGrid'
 import './App.scss';
 
 const clientID = `?client_id=${process.env.REACT_APP_ACCESS_KEY}`
@@ -13,13 +13,14 @@ const App = () => {
 
     const fetchImages = async() => {
         setLoading(true)
-
         let url;
         url = `${mainUrl}${clientID}`
+
         try {
             const response = await fetch(url)
             const data = await response.json()
-            console.log(data)
+            setPhotos(data)
+            setLoading(false)
         } catch (error) {
             setLoading(false)
             console.log(error)
@@ -31,9 +32,10 @@ const App = () => {
     }, [])
 
     return (
-        <div>
-            <h1>Hey</h1>
-        </div>
+        <main>
+            <Search />
+            <PhotoGrid photos={photos} loading={loading} />
+        </main>
     )
 }
 
