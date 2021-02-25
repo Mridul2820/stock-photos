@@ -18,8 +18,8 @@ const Photo = ({
                     <h4>{name}</h4>
                     <p>{likes} likes</p>
                 </div>
-                <a target="_blank" href={portfolio_url}>
-                    <img src={medium} alt='' className='user-img' />
+                <a target="_blank" rel="noreferrer" href={portfolio_url}>
+                    <img src={medium} alt={name} className='user-img' />
                 </a>
             </div>
         </article>
