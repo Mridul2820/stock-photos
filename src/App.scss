@@ -25,11 +25,14 @@ Stock Photos
     background: transparent;
     color: var(--clr-grey-5);
     border-bottom: 3px solid var(--clr-grey-5);
-    cursor: pointer;
 
     &:focus {
         outline: none;
     }
+}
+
+.submit-btn {
+    cursor: pointer;
 }
 .form-input {
     color: var(--clr-grey-3);
