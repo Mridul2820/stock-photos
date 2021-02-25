@@ -7,7 +7,7 @@ const PhotoGrid = ({ photos, loading }) => {
             <div className="photos-center">
                 {
                     photos.map(photo => {
-                        console.log(photo)
+                        // console.log(photo)
                         return <Photo key={photo.id} {...photo} />
                     })
                 }
