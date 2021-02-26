@@ -1,3 +1,12 @@
+// Responsive Breakpoint
+$bp-large-1: 75em;      //1200px
+$bp-large-2: 64em;      //1024px
+$bp-large-3: 59em;      //944px
+$bp-large-4: 48em;      //768px
+$bp-medium-1: 38em;     //608px
+$bp-medium-2: 36em;     //576px
+$bp-small-2: 27em;      //432px
+
 /*
 =============== 
 Stock Photos
@@ -10,9 +19,17 @@ Stock Photos
     margin: 0 auto;
     display: flex;
     justify-content: center;
+
+    @media only screen and (max-width: $bp-medium-1){
+        padding: 2rem 0 0 0;
+    }
 }
 .search-form {
     display: flex;
+
+    @media only screen and (min-width: $bp-medium-2){
+        max-width: var(--fixed-width);
+    }
 }
 .form-input {
     width: 100%;
@@ -42,23 +59,43 @@ Stock Photos
 .form-input::placeholder {
     color: var(--clr-grey-5);
 }
+
 .photos {
     padding: 5rem 0;
+
+    @media only screen and (max-width: $bp-medium-1){
+        padding: 2rem 0;
+    }
 }
+
 .photos-center {
     width: 90vw;
     // max-width: var(--max-width);
     margin: 0 auto;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.5vw;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2vw;
+    
+
+    @media only screen and (max-width: $bp-large-2){
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5vw;
+    }
 }
+
 .photo {
-    height: 29vw;
-    width: 29vw;
+    height: 21vw;
+    width: 21vw;
+
     position: relative;
     overflow: hidden;
+
+    @media only screen and (max-width: $bp-large-2){
+        height: 29vw;
+        width: 29vw;
+    }
 }
+
 .photo > img {
     width: 100%;
     height: 100%;
@@ -92,32 +129,6 @@ Stock Photos
 }
 .photo:hover .photo-info {
     transform: translateY(0);
-}
-@media screen and (min-width: 576px) {
-    .search-form {
-    max-width: var(--fixed-width);
-    }
-}
-
-@media screen and (max-width: 1024px) {
-    .photos-center {
-        grid-template-columns: repeat(4, 1fr);
-        gap: 2vw;
-    }
-    .photo {
-        height: 21vw;
-        width: 21vw;
-    }
-}
-
-@media screen and (max-width: 600px) {
-    .search {
-        padding: 2rem 0 0 0;
-    }
-
-    .photos {
-        padding: 2rem 0;
-    }
 }
 
 .loading {
