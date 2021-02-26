@@ -5,6 +5,7 @@ $bp-large-3: 59em;      //944px
 $bp-large-4: 48em;      //768px
 $bp-medium-1: 38em;     //608px
 $bp-medium-2: 36em;     //576px
+$bp-small-1: 30em;      //480px
 $bp-small-2: 27em;      //432px
 
 /*
@@ -76,23 +77,43 @@ Stock Photos
     grid-template-columns: repeat(4, 1fr);
     gap: 2vw;
     
-
     @media only screen and (max-width: $bp-large-2){
         grid-template-columns: repeat(3, 1fr);
         gap: 1.5vw;
+    }
+
+    @media only screen and (max-width: $bp-large-4){
+        width: 80vw;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2vw;
+    }
+
+    @media only screen and (max-width: $bp-large-4){
+        width: 90vw;
+        grid-template-columns: 1fr;
+        gap: 2vw;
     }
 }
 
 .photo {
     height: 21vw;
     width: 21vw;
-
     position: relative;
     overflow: hidden;
 
     @media only screen and (max-width: $bp-large-2){
         height: 29vw;
         width: 29vw;
+    }
+
+    @media only screen and (max-width: $bp-large-4){
+        height: 39vw;
+        width: 39vw;
+    }
+
+    @media only screen and (max-width: $bp-large-4){
+        height: 90vw;
+        width: 90vw;
     }
 }
 
